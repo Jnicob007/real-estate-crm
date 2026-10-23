@@ -15,3 +15,12 @@
 | Konfiguracja systemu | Tak | Nie | Nie |
 
 Wymuszaj te uprawnienia po stronie backendu, nie tylko w interfejsie.
+
+## Przepływ rejestracji i sesji
+
+- Publiczna samo-rejestracja jest wyłączona. Interfejs pokazuje logowanie i nie udostępnia formularza tworzenia zwykłego konta.
+- Podczas pierwszej konfiguracji można utworzyć konto administratora przez `POST /api/auth/bootstrap`. API dopuszcza to wyłącznie, gdy nie ma jeszcze użytkowników; po utworzeniu konta bootstrap przestaje działać.
+- Administrator tworzy kolejne konta przez `POST /api/users`. Kierownik i agent nie mają do tego uprawnień.
+- Logowanie korzysta z `POST /api/auth/login`; aplikacja przesyła cookie sesyjne także przy sprawdzaniu `GET /api/auth/me` i wylogowaniu przez `POST /api/auth/logout`.
+- Formularz bootstrapu wymaga imienia, nazwiska, poprawnego e-maila oraz hasła o długości co najmniej 12 znaków zawierającego literę i cyfrę. Walidacja serwera pozostaje źródłem prawdy.
+- UI nie stanowi kontroli dostępu. Każde chronione żądanie jest sprawdzane przez API.
