@@ -11,5 +11,11 @@ Szkielet projektu CRM dla agencji nieruchomości. Repozytorium zakłada oddziele
 - Klient poszukujący nieruchomości do kupna lub wynajmu.
 - Klient oferujący nieruchomość na sprzedaż lub wynajem.
 
+## Backend — rejestracja
+
+Kont nie zakłada się publicznie. Pierwszy administrator: `POST /api/auth/bootstrap`. Kolejne konta: `POST /api/users` (sesja administratora). Szczegóły: `docs/api.md` i `docs/architecture.md`.
+
+Migracje MySQL: `npm run db:migrate --workspace server`.
+
 ## Status
-To struktura katalogów i pliki startowe, a nie gotowa działająca aplikacja. Moduły zawierają pliki `.gitkeep` do zachowania katalogów w Git.
+Szkielet aplikacji z pierwszą warstwą rejestracji i sesji po stronie API. Wiele katalogów modułów nadal zawiera `.gitkeep`.
