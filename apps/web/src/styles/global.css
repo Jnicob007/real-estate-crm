@@ -1,0 +1,4 @@
+* { box-sizing: border-box; }
+:root { font-family: system-ui, sans-serif; color: #1f2937; background: #f7f8fa; }
+body { margin: 0; }
+.app-shell { max-width: 900px; margin: 4rem auto; padding: 2rem; background: white; border-radius: 1rem; }

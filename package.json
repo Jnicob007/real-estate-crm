@@ -1,0 +1,14 @@
+{
+  "name": "real-estate-crm",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": ["apps/*", "server", "packages/*"],
+  "scripts": {
+    "dev": "npm run dev --workspace apps/web",
+    "dev:web": "npm run dev --workspace apps/web",
+    "dev:server": "npm run dev --workspace server",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
+  }
+}
